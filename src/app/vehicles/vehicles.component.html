@@ -1,0 +1,47 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-success pull-right" (click)="addNewScooter()" [disabled]="shouldDisplayMessage">Add a scooter</button>
+  </div>
+</div>
+
+  <div class="row" *ngIf="shouldDisplayMessage">
+      <div class="panel panel-primary">
+          <div class="panel-heading">Manage Vehicle</div>
+          <div class="panel-body">
+              <app-vehicle-edit></app-vehicle-edit>
+            </div>
+        </div>
+    </div>
+
+  <div class="row">
+    <div class="col-md-12">
+        <hr/>&nbsp;
+    </div>
+  </div>
+<div class="row">
+  <app-vehicle-list></app-vehicle-list>
+</div>
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-vehicle-edit></app-vehicle-edit>
+  </div>
+</ng-template>
+
+
+<!-- <div class="row">
+  <div class="col-md-5">ng
+      <app-vehicle-edit></app-vehicle-edit>
+  </div>
+  <div class="col-md-7">
+    <app-vehicle-list></app-vehicle-list>
+  </div>
+</div> -->

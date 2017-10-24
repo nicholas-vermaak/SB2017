@@ -1,0 +1,36 @@
+<form (ngSubmit)="onSubmit(vehicleForm)" #vehicleForm="ngForm" class="form-inline">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="vehicleService.selectedVehicle.$key">
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input class="form-control" name="name" #name="ngModel" [(ngModel)]="vehicleService.selectedVehicle.name" required placeholder="Vehicle Name" required>
+  </div>
+  <div class="form-group">
+    <label for="position">Registration Number</label>
+    <input class="form-control" name="registrationNum" #name="ngModel" [(ngModel)]="vehicleService.selectedVehicle.registrationNum"
+      required placeholder="Registration Number">
+  </div>
+
+  <div class="form-group">
+      <label for="position">Image Url</label>
+      <input class="form-control" name="imgUrl" #name="ngModel" [(ngModel)]="vehicleService.selectedVehicle.imgUrl"
+        required placeholder="Paste an image url">
+    </div>
+
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-default" [disabled]="!vehicleForm.valid">
+      <i class="fa fa-floppy-o"></i> Submit
+    </button>
+
+    <button type="button" class="btn btn-default" (click)="onDelete(vehicleForm)" *ngIf="vehicleService.selectedVehicle.$key != null">
+      <i class="fa fa-trash-o"></i>
+      Delete
+    </button>
+
+    <button type="button" class="btn btn-default" (click)="resetForm(vehicleForm)">
+      <i class="fa fa-refresh-o"></i>
+      Reset
+    </button>
+  </div>
+</form>

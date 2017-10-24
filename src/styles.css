@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+input.ng-invalid.ng-dirty {
+  border: solid 1px red;
+}
+input.ng-valid.ng-dirty {
+  border: solid 1px green;
+}
+button,
+ul.list-group.hover li:hover {
+  cursor: pointer;
+}
+ul.list-group.hover li:hover {
+  background-color: blanchedalmond;
+}
+.panel {
+}
+.img-center {margin:0 auto;
+display: block;
+}
